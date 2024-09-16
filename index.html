@@ -1,49 +1,67 @@
+
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href=
-"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href=
-"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-    <title>Weather 1 App</title>
+"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity=
+"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+    <script src="app.js"></script>
+
+    <title>To Do List</title>
 </head>
 
 <body>
-    <div class="container">
-        <div class="weather-card">
-            <h1 style="color: green;">
-                Discover The Weather In Your City
-            </h1>
-            <h3>
-                Weather App
-            </h3>
-            <input type="text" id="city-input"
-                placeholder="Enter city name">
-            <button id="city-input-btn"
-                    onclick="weatherFn($('#city-input').val())">
-                    Get Weather
-            </button>
-            <div id="weather-info"
-                class="animate__animated animate__fadeIn">
-                <h3 id="city-name"></h3>
-                <p id="date"></p>
-                <img id="weather-icon" src="" alt="Weather Icon">
-                <p id="temperature"></p>
-                <p id="description"></p>
-                <p id="wind-speed"></p>
+    <header class="bg-success text-white p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <font face="Comic sans MS"
+                        size="11" color="black">
+                        <strong>To Do List</strong>
+                    </font>
+                    
+                </div>
             </div>
         </div>
+    </header>
+
+    <div class="container mt-3">
+        <h2>Add Items</h2>
+
+        <label id="lblsuccess" class="text-success"
+                style="display: none;">
+        </label>
+        
+        <form id="addForm">
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+
+                    <input type="text" onkeyup=
+                        "toggleButton(this, 'submit')"
+                        class="form-control" id="item">
+                </div>
+
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                <input type="submit" class="btn btn-dark"
+                        id="submit" value="Submit" disabled>
+                </div>
+            </div>
+        </form>
+
+        <h3 class="mt-4">Tasks</h3>
+
+        <form id="addForm">
+            <ul class="list-group" id="items"></ul>
+        </form>
     </div>
-    <script src=
-"https://code.jquery.com/jquery-3.6.0.min.js">
-    </script>
-    <script src=
-"https://momentjs.com/downloads/moment.min.js">
-    </script>
-    <script src="script.js"></script>
 </body>
 
 </html>
